@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class GlobalService {
 
-  apiEndpoint:string="http://127.0.0.1:8000/";
+  apiEndpoint:string="http://3.144.175.164:8000/";
 
   constructor(private http: HttpClient) { }
 
