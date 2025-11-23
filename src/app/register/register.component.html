@@ -1,0 +1,169 @@
+<div class="container">
+  <!-- HERO SECTION -->
+  <div class="text-center mb-5">
+    <h1 class="text-4xl font-semibold mb-3">Sudoku Master</h1>
+    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+      Play Sudoku, improve your skills, track your stats, and challenge yourself with increasing difficulty levels.
+    </p>
+  </div>
+  <!-- Welcome Card -->
+  <div class="row mt-5 mb-5" *ngIf="!display">
+    <div class="col-md-6 offset-md-3">
+      <p-card styleClass="shadow-lg rounded-xl">
+        <ng-template pTemplate="header">
+          <div class="text-center py-4 border-b">
+            <h3 class="text-2xl font-semibold">Welcome</h3>
+          </div>
+        </ng-template>
+
+        <div class="row text-center py-3">
+          <div class="col-md-6 mb-3">
+            <p-button
+              label="Register"
+              (onClick)="showRegister()"
+              styleClass="p-button-rounded p-button-primary w-full"
+            ></p-button>
+          </div>
+          <div class="col-md-6 mb-3">
+            <p-button
+              label="Login"
+              routerLink="login"
+              styleClass="p-button-rounded p-button-secondary w-full"
+            ></p-button>
+          </div>
+        </div>
+      </p-card>
+    </div>
+  </div>
+
+  <!-- Register Form Card -->
+  <div class="row mt-5 mb-5" *ngIf="display">
+    <div class="col-md-6 offset-md-3">
+      <p-card styleClass="shadow-lg rounded-xl">
+        <ng-template pTemplate="header">
+          <h2 class="text-center py-5 text-2xl font-semibold border-b">
+            Register
+          </h2>
+        </ng-template>
+
+        <div class="px-4 pb-4">
+          <!-- Firstname -->
+          <div class="row mt-4">
+            <div class="offset-md-2 col-md-8">
+              <input
+                type="text"
+                id="firstname"
+                placeholder="Firstname"
+                pInputText
+                class="w-full p-3 rounded-lg"
+                [(ngModel)]="registerModel.firstname"
+              />
+            </div>
+          </div>
+
+          <!-- Lastname -->
+          <div class="row mt-4">
+            <div class="offset-md-2 col-md-8">
+              <input
+                type="text"
+                id="lastname"
+                placeholder="Lastname"
+                pInputText
+                class="w-full p-3 rounded-lg"
+                [(ngModel)]="registerModel.lastname"
+              />
+            </div>
+          </div>
+
+          <!-- Username -->
+          <div class="row mt-4">
+            <div class="offset-md-2 col-md-8">
+              <input
+                type="text"
+                id="username"
+                placeholder="Username"
+                pInputText
+                class="w-full p-3 rounded-lg"
+                [(ngModel)]="registerModel.username"
+              />
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="row mt-4">
+            <div class="offset-md-2 col-md-8">
+              <input
+                type="text"
+                id="email"
+                placeholder="Email"
+                pInputText
+                class="w-full p-3 rounded-lg"
+                [(ngModel)]="registerModel.email"
+              />
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="row mt-4">
+            <div class="offset-md-2 col-md-8">
+              <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                pInputText
+                class="w-full p-3 rounded-lg"
+                [(ngModel)]="registerModel.password"
+              />
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="row mt-5 mb-3 text-center">
+            <div class="col-md-5 offset-md-1 mb-3">
+              <p-button
+                label="Back to Login"
+                routerLink="login"
+                styleClass="p-button-secondary p-button-rounded w-full"
+              ></p-button>
+            </div>
+
+            <div class="col-md-5 mb-3">
+              <p-button
+                label="Register"
+                (onClick)="Register()"
+                styleClass="p-button-primary p-button-rounded w-full"
+              ></p-button>
+            </div>
+          </div>
+        </div>
+      </p-card>
+    </div>
+  </div>
+
+
+  <!-- FEATURE GRID -->
+  <div class="row text-center mb-5">
+    <div class="col-md-4 mb-3">
+      <p-card styleClass="shadow-md rounded-xl py-4">
+        <h3 class="text-xl font-semibold mb-2">Play Anywhere</h3>
+        <p class="text-gray-600">Clean interface, fast gameplay, fun experience.</p>
+      </p-card>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <p-card styleClass="shadow-md rounded-xl py-4">
+        <h3 class="text-xl font-semibold mb-2">Track Progress</h3>
+        <p class="text-gray-600">Fastest times, win streaks, overall stats.</p>
+      </p-card>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <p-card styleClass="shadow-md rounded-xl py-4">
+        <h3 class="text-xl font-semibold mb-2">Multiple Levels</h3>
+        <p class="text-gray-600">Easy, Medium, Hard — challenge yourself.</p>
+      </p-card>
+    </div>
+  </div>
+</div>
+
+<p-toast position="bottom-right"></p-toast>

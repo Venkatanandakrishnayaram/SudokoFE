@@ -1,0 +1,97 @@
+
+.navbar-brand{
+  color: white !important;
+}
+
+.nav-link{
+  color: white !important;
+}
+
+.p-inputtext {
+  width: 100% !important;
+}
+
+.login{
+  .p-button{
+    width: 100% !important;
+  }
+}
+
+.p-fileupload-filename{
+  word-break: keep-all !important;
+}
+
+.delete-button{
+  background: red !important;
+  border: red !important;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  background: #252725 !important;
+  color: white !important;
+}
+
+.toggle{
+  .p-button-label{
+    font-size: larger;
+  }
+}
+
+.firstcard{
+  .p-card .p-card-footer{
+    padding: 0 0 0 0 !important;
+  }
+
+  .p-card .p-card-title{
+    color: rebeccapurple !important;
+  }
+}
+
+.secondcard{
+  .p-card .p-card-footer{
+    padding: 0 0 0 0 !important;
+  }
+
+  .p-card .p-card-title{
+    color: #e5ab1b !important;
+  }
+}
+
+.thirdcard{
+  .p-card .p-card-footer{
+    padding: 0 0 0 0 !important;
+  }
+
+  .p-card .p-card-title{
+    color: darkcyan !important;
+  }
+}
+
+.forthcard{
+  .p-card .p-card-footer{
+    padding: 0 0 0 0 !important;
+  }
+
+  .p-card .p-card-title{
+    color: #40a9df !important;
+  }
+}
+
+.p-card{
+  border-radius: 15px !important;
+}
+
+.p-card{
+  box-shadow: 0 2px 1px 0px rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12) !important;
+}
+
+.p-button{
+  width: 100% !important;
+  background-color: black !important;
+  border-radius: 15px !important;
+}
+
+.p-dropdown
+{
+  width: 100% !important;
+}

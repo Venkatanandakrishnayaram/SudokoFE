@@ -1,0 +1,77 @@
+<div class="container login mt-5">
+
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+
+      <p-card styleClass="shadow-lg rounded-xl">
+
+        <!-- Header -->
+        <ng-template pTemplate="header">
+          <div class="py-4 border-b text-center">
+            <h2 class="text-2xl font-semibold">Login</h2>
+          </div>
+        </ng-template>
+
+        <!-- Form -->
+        <div class="px-4 py-4 text-center">
+
+          <!-- Username -->
+          <div class="row mt-3">
+            <div class="offset-md-2 col-md-8">
+              <input
+                type="text"
+                id="username"
+                placeholder="Username"
+                pInputText
+                class="w-full p-3 rounded-lg shadow-sm"
+                [(ngModel)]="loginModel.username"
+              />
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="row mt-4">
+            <div class="offset-md-2 col-md-8">
+              <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                pInputText
+                class="w-full p-3 rounded-lg shadow-sm"
+                [(ngModel)]="loginModel.password"
+              />
+            </div>
+          </div>
+
+          <!-- Login button -->
+          <div class="row mt-5">
+            <div class="col-md-4 offset-md-4">
+              <p-button
+                label="Login"
+                styleClass="p-button-primary p-button-rounded w-full"
+                (onClick)="Login()"
+              ></p-button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Error Message -->
+        <div class="row mt-3" *ngIf="invalid_user">
+          <div class="col-md-8 offset-md-2">
+            <div class="alert alert-danger text-center shadow-sm py-2" role="alert">
+              {{ login_message }}
+            </div>
+          </div>
+        </div>
+
+      </p-card>
+
+      
+
+    </div>
+  </div>
+
+</div>
+
+<p-toast position="bottom-right"></p-toast>

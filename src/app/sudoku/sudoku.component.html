@@ -1,0 +1,109 @@
+<div class="container sudoku mt-4">
+
+  <!-- TITLE -->
+  <div class="text-center mb-3">
+    <h1 class="text-3xl font-bold">Sudoku</h1>
+  </div>
+
+  <!-- TOP GAME INFO BAR -->
+  <div class="row align-items-center text-center mb-4">
+
+    <div class="col-md-2 mb-2">
+      <div class="p-0 bg-gray-100 rounded-lg shadow-sm">
+        <h4 class="mb-1 text-gray-700">Moves</h4>
+        <p class="text-xl font-semibold">{{ totalMoves }}</p>
+      </div>
+    </div>
+
+    <div class="col-md-2 mb-2">
+      <div class="p-0 bg-gray-100 rounded-lg shadow-sm">
+        <h4 class="mb-1 text-gray-700">Errors</h4>
+        <p class="text-xl font-semibold text-red-600">{{ errors }}</p>
+      </div>
+    </div>
+
+    <div class="col-md-2 mb-2">
+      <div class="p-0 bg-gray-100 rounded-lg shadow-sm">
+        <h4 class="mb-1 text-gray-700">Score</h4>
+        <p class="text-xl font-semibold text-green-600">{{ score }}</p>
+      </div>
+    </div>
+
+    <!-- DROPDOWN -->
+    <div class="col-md-2 mb-2">
+      <p-dropdown
+        [options]="levels"
+        [(ngModel)]="difficulty"
+        placeholder="Level"
+        optionLabel="name"
+        optionValue="code"
+        styleClass="w-full">
+      </p-dropdown>
+    </div>
+
+    <!-- NEW GAME BUTTON -->
+    <div class="col-md-2 mb-2">
+      <p-button
+        label="New Game"
+        (onClick)="startNewGame()"
+        styleClass="p-button-rounded p-button-primary w-full">
+      </p-button>
+    </div>
+
+    <!-- REVEAL BUTTON -->
+    <div class="col-md-2 mb-2">
+      <p-button
+        label="Reveal"
+        (onClick)="revealGame()"
+        styleClass="p-button-rounded p-button-secondary w-full">
+      </p-button>
+    </div>
+
+  </div>
+
+  <!-- TIMER + BOARD -->
+  <div class="row justify-content-center">
+
+    <!-- TIMER -->
+    <div class="col-md-2 text-center mb-3">
+      <div class="p-3 bg-gray-100 rounded-lg shadow-sm timer">
+        <h4 class="mb-1 text-gray-700">Time</h4>
+        <p class="text-xl font-semibold">
+          {{ minutes }}:{{ seconds | number:'2.0' }}
+        </p>
+      </div>
+    </div>
+
+    <!-- BOARD -->
+    <div class="col-md-6 text-center">
+
+      <!-- 9x9 Board -->
+      <div id="board" class="board mt-4 mx-auto shadow-lg rounded-lg">
+        <div
+          *ngFor="let tile of boardTiles"
+          [id]="tile.id"
+          [class]="tile.classes"
+          (click)="selectTile(tile)">
+          {{ tile.value }}
+        </div>
+      </div>
+
+      <!-- DIGIT SELECTOR -->
+      <div id="digits" class="digits mt-3">
+        <div
+          *ngFor="let number of numbers"
+          [id]="number"
+          class="number"
+          [class.number-selected]="number === selectedNumber"
+          (click)="selectNumber(number)">
+          {{ number }}
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<p-toast position="bottom-right"></p-toast>

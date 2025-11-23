@@ -1,0 +1,114 @@
+<div class="container">
+  <div class="row mt-4">
+    <div class="col-md-3">
+      <p-button label="Start New Game" routerLink="/sudoku"></p-button>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-md-3 firstcard">
+      <p-card header="Games Played" [style]="{width: '250px'}" styleClass="p-card-shadow">
+        <ng-template pTemplate="header">
+        </ng-template>
+        <div class="row">
+          <div class="col-md-4">
+            <i class="pi pi-chart-line " style="font-size: 2.5rem ;color:rebeccapurple"></i>
+          </div>
+          <div class="col-md-6">
+            <h1 style="color: rebeccapurple;">{{stats.total_games_played}}</h1>
+          </div>
+        </div>
+        <ng-template pTemplate="footer">
+          <img alt="Card" width="200px" src="assets/interactions.svg">
+
+        </ng-template>
+      </p-card>
+    </div>
+    <div class="col-md-3 secondcard">
+      <p-card header="Games Won" [style]="{width: '250px'}" styleClass="p-card-shadow">
+        <ng-template pTemplate="header">
+        </ng-template>
+        <div class="row">
+          <div class="col-md-4">
+            <i class="bi bi-emoji-laughing" style="font-size: 2.3rem ;color:#e5ab1b"></i>
+          </div>
+          <div class="col-md-6">
+            <h1 style="color: #e5ab1b;">{{stats.total_games_won}}/{{stats.total_games_played}}</h1>
+          </div>
+        </div>
+        <ng-template pTemplate="footer">
+          <img alt="Card" width="200px" src="assets/locations.svg">
+
+        </ng-template>
+      </p-card>
+    </div>
+    <div class="col-md-3 thirdcard">
+      <p-card header="Win Percentage" [style]="{width: '250px'}" styleClass="p-card-shadow">
+        <ng-template pTemplate="header">
+        </ng-template>
+        <div class="row">
+          <div class="col-md-4">
+            <i class="bi bi-speedometer2" style="font-size: 2.3rem ;color:darkcyan"></i>
+          </div>
+          <div class="col-md-6">
+            <h1 style="color: darkcyan;">{{stats.win_percentage}}%</h1>
+            <!-- <p-knob [(ngModel)]="stats.win_percentage" [readonly]="true" [size]="60" style="color: darkcyan;"></p-knob> -->
+          </div>
+        </div>
+        <ng-template pTemplate="footer">
+          <img alt="Card" width="200px" src="assets/rate.svg">
+
+        </ng-template>
+      </p-card>
+    </div>
+    <div class="col-md-3 forthcard">
+      <p-card header="Most Played Level" [style]="{width: '250px'}" styleClass="p-card-shadow">
+        <ng-template pTemplate="header">
+        </ng-template>
+        <div class="row">
+          <div class="col-md-4">
+            <i class="bi bi-stars" style="font-size: 2.3rem ;color:#40a9df"></i>
+          </div>
+          <div class="col-md-6">
+            <h1 style="color: #40a9df;">{{mostplayedlevel.most_played_level | titlecase}}</h1>
+          </div>
+        </div>
+        <ng-template pTemplate="footer">
+          <img alt="Card" width="200px" src="assets/users.svg">
+
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col">
+      <p-table [value]="games" responsiveLayout="scroll">
+        <ng-template pTemplate="header">
+            <tr>
+              <th pSortableColumn="game_id">Game Id <p-sortIcon field="game_id"></p-sortIcon></th>
+              <th pSortableColumn="time">Time taken <p-sortIcon field="time"></p-sortIcon></th>
+              <th pSortableColumn="timestamp">Timestamp <p-sortIcon field="timestamp"></p-sortIcon></th>
+              <th pSortableColumn="score">Score <p-sortIcon field="score"></p-sortIcon></th>
+              <th pSortableColumn="moves">Total Moves <p-sortIcon field="moves"></p-sortIcon></th>
+              <th pSortableColumn="status">Status <p-sortIcon field="status"></p-sortIcon></th>
+              <th pSortableColumn="errors">Error Moves<p-sortIcon field="errors"></p-sortIcon></th>
+              <th pSortableColumn="difficulty">Difficulty Level <p-sortIcon field="difficulty"></p-sortIcon></th>
+
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+            <tr>
+                <td>{{product.game_id}}</td>
+                <td>{{product.time}}</td>
+                <td>{{product.timestamp | date:'dd-MM-yyyy HH:mm:ss'}}</td>
+                <td>{{product.score}}</td>
+                <td>{{product.moves}}</td>
+                <td>{{product.status}}</td>
+                <td>{{product.errors}}</td>
+                <td>{{product.difficulty}}</td>
+
+            </tr>
+        </ng-template>
+    </p-table>
+    </div>
+  </div>
+</div>
