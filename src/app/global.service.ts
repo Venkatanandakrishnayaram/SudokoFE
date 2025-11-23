@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class GlobalService {
 
-  apiEndpoint:string="http://3.144.175.164/";
+  apiEndpoint:string="https://ghz-summary-flavor-gather.trycloudflare.com/";
 
   constructor(private http: HttpClient) { }
 
