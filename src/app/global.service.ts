@@ -7,7 +7,9 @@ import { Observable } from 'rxjs';
 })
 export class GlobalService {
 
-  apiEndpoint:string="https://differential-yen-educators-combines.trycloudflare.com/";
+  apiEndpoint:string="https://refused-view-com-map.trycloudflare.com/";
+  // apiEndpoint:string="http://127.0.0.1:8000/";
+
 
   constructor(private http: HttpClient) { }
 
