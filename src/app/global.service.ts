@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class GlobalService {
 
-  apiEndpoint:string="https://refused-view-com-map.trycloudflare.com/";
+  apiEndpoint:string="https://mean-diagram-coastal-paying.trycloudflare.com/";
   // apiEndpoint:string="http://127.0.0.1:8000/";
 
 
